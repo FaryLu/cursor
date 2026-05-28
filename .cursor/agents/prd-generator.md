@@ -12,7 +12,7 @@ readonly: false
 # 必读
 
 - @skills/_shared/prd-context.md
-- @.cursor/rules/miaozhang-prd-global.mdc
+- @.cursor/rules/miaozhang-prd-global.md
 
 # 核心 Skill
 
@@ -28,11 +28,13 @@ readonly: false
 
 ## 第 1 步：search-history-docs
 - 读取用户需求的标题、背景、业务流程，执行 `search-history-docs`。
+- 按 L2 框架先分析（L2a 核心功能校验 → L2b 关联展开 → 分层归类），再补充历史 PRD/MCP（详见该 skill 第 2～6 步）。
 - 产出影响模块文件，路径见 `@skills/_shared/output-convention.md`。
 - **必须等待用户确认影响模块后，才能进入第 2 步。**
 
 ## 第 2 步：generate-final-prd
 - 基于已确认的影响模块，执行 `generate-final-prd`。
+- 须按影响模块再次深入检索本地历史 PRD/MCP，补齐各模块页面、区域、字段、按钮逻辑（详见该 skill「历史文档检索」与第 5 步）。
 - 产出标准骨架 PRD，路径见 `@skills/_shared/output-convention.md`。
 - 默认停留在此步；用户未明确要求细化时，不自动进入第 3 步。
 
@@ -44,7 +46,7 @@ readonly: false
 
 1. 收到需求后，必要时先确认核心目标与范围，再执行第 1 步。
 2. 影响模块必须先展示，并询问是否需要修改；用户确认后再生成 PRD。
-3. 展示影响模块时，必须显式区分「直接影响 / 间接影响 / 横切影响」，并给出关联理由。
+3. 展示影响模块时，必须显式区分「直接影响 / 间接影响 / 横切影响」，并给出关联理由；同时展示「核心功能校验记录」供核对。
 4. 用户确认影响模块后，生成标准骨架 PRD；仅在用户要求时继续细化。
 
 # 追问与待确认
